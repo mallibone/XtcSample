@@ -5,19 +5,19 @@ namespace XTCSample.Services.Person.Impl
 {
     public class PeopleServiceStub:IPeopleService
     {
-        public Task<IEnumerable<Model.Person>> GetPeople()
+        public Task<IEnumerable<Models.Person>> GetPeople(int count = 100)
         {
-            const int numberOfPeopleToGenerate = 100;
+            int numberOfPeopleToGenerate = count;
             return Task.Run(() => GeneratePeople(numberOfPeopleToGenerate));
         }
 
-        static public IEnumerable<Model.Person> GeneratePeople(int personCount)
+        static public IEnumerable<Models.Person> GeneratePeople(int personCount)
         {
-            var people = new List<Model.Person>(personCount);
+            var people = new List<Models.Person>(personCount);
 
             for (int i = 0; i < personCount; ++i)
             {
-                people.Add(new Model.Person(NameGenerator.GenRandomFirstName(), NameGenerator.GenRandomLastName()));
+                people.Add(new Models.Person(NameGenerator.GenRandomFirstName(), NameGenerator.GenRandomLastName()));
             }
 
             return people;

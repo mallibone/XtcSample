@@ -34,13 +34,7 @@ namespace XTCSample
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
             "CA1822:MarkMembersAsStatic",
             Justification = "This non-static member is needed for data binding purposes.")]
-        public MainViewModel Main
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<MainViewModel>();
-            }
-        }
+        public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
 
         /// <summary>
         /// Gets the Detail property.
@@ -48,12 +42,6 @@ namespace XTCSample
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
             "CA1822:MarkMembersAsStatic",
             Justification = "This non-static member is needed for data binding purposes.")]
-        public DetailViewModel Detail
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<DetailViewModel>();
-            }
-        }
+        public DetailViewModel Detail => ServiceLocator.Current.GetInstance<DetailViewModel>();
     }
 }

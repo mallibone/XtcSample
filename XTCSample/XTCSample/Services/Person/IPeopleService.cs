@@ -5,6 +5,6 @@ namespace XTCSample.Services.Person
 {
     public interface IPeopleService
     {
-        Task<IEnumerable<Model.Person>> GetPeople();
+        Task<IEnumerable<Models.Person>> GetPeople(int count = 100);
     }
 }
