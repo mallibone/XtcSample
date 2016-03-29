@@ -26,5 +26,10 @@ namespace XTCSample.Views
         {
             await Vm.Init();
         }
+
+        private void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
     }
 }

@@ -4,10 +4,10 @@
              x:Class="XTCSample.Views.OverviewView">
   <Grid>
     <!--<ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible=”{Binding IsLoading}” Color=”{x:Static common:ColorResources.ActivityIndicator}” />-->
-    <ListView ItemsSource="{Binding People}">
+    <ListView ItemsSource="{Binding People}" ItemSelected="ListView_OnItemSelected">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell Text="{Binding FullName}"></TextCell>
+          <TextCell Text="{Binding FullName}" />
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
