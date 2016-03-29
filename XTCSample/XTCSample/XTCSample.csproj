@@ -42,6 +42,7 @@
     <Compile Include="Services\Person\Impl\NameGenerator.cs" />
     <Compile Include="Services\Person\Impl\PeopleServiceStub.cs" />
     <Compile Include="Services\Person\IPeopleService.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DetailViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\DetailView.xaml.cs">

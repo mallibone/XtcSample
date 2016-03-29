@@ -6,14 +6,21 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using XTCSample.Models;
+using XTCSample.ViewModels;
 
 namespace XTCSample.Views
 {
     public partial class DetailView : ContentPage
     {
-        public DetailView(Person selectedItem)
+        public DetailViewModel Vm => (DetailViewModel) BindingContext;
+
+        public DetailView(Person selectedPerson)
         {
             InitializeComponent();
+
+            BindingContext = App.Locator.Detail;
+
+            Vm.Init(selectedPerson);
         }
     }
 }
