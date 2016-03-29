@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using XTCSample.Models;
 using XTCSample.ViewModels;
 
 namespace XTCSample.Views
@@ -27,9 +28,11 @@ namespace XTCSample.Views
             await Vm.Init();
         }
 
-        private void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            //throw new NotImplementedException();
+            var selectedPerson = (Person) PeopleListView.SelectedItem;
+            await Navigation.PushAsync(new DetailView(selectedPerson));
+            PeopleListView.SelectedItem = null;
         }
     }
 }
