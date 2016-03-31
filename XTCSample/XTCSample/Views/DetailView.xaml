@@ -2,10 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XTCSample.Views.DetailView">
-  <StackLayout Padding="8">
-    <Label Text="Firstname" HorizontalOptions="FillAndExpand" />
-    <Label Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" />
-    <Label Text="Lastname" HorizontalOptions="FillAndExpand" />
-    <Label Text="{Binding LastName}" HorizontalOptions="FillAndExpand" />
-  </StackLayout>
+  <Grid>
+    <StackLayout Padding="8">
+      <Label Text="Firstname" HorizontalOptions="FillAndExpand" />
+      <Label Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" />
+      <Entry Text="{Binding FirstName, Mode=TwoWay}" IsVisible="{Binding IsInEditMode}"></Entry>
+      <Label Text="Lastname" HorizontalOptions="FillAndExpand" />
+      <Label Text="{Binding LastName}" HorizontalOptions="FillAndExpand" />
+      <Entry Text="{Binding LastName, Mode=TwoWay}" IsVisible="{Binding IsInEditMode}"></Entry>
+    </StackLayout>
+    <Button Text="Save" IsVisible="{Binding IsInEditMode}" BackgroundColor="Lime" HorizontalOptions="CenterAndExpand" VerticalOptions="End" />
+  </Grid>
 </ContentPage>
